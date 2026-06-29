@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Employee Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>CORP</h1>
+                <p>Employee Hub</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#employees" class="nav-item" data-section="employees">
+                    <span class="icon">👥</span>
+                    <span>Employees</span>
+                </a>
+                <a href="#performance" class="nav-item" data-section="performance">
+                    <span class="icon">📈</span>
+                    <span>Performance</span>
+                </a>
+                <a href="#attendance" class="nav-item" data-section="attendance">
+                    <span class="icon">📋</span>
+                    <span>Attendance</span>
+                </a>
+                <a href="#leaves" class="nav-item" data-section="leaves">
+                    <span class="icon">🗓️</span>
+                    <span>Leaves</span>
+                </a>
+                <a href="#reports" class="nav-item" data-section="reports">
+                    <span class="icon">📄</span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">JD</div>
+                    <div class="user-info">
+                        <p class="user-name">John Doe</p>
+                        <p class="user-role">Manager</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h2 id="page-title">Dashboard</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search employees...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="notifications">
+                        <button class="notify-btn">🔔</button>
+                        <span class="notify-badge">5</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content">
+                <!-- Dashboard Section -->
+                <section id="dashboard-content" class="section-content active">
+                    <!-- Key Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>Total Employees</h3>
+                                <span class="metric-icon">👥</span>
+                            </div>
+                            <div class="metric-value">1,284</div>
+                            <div class="metric-change positive">↑ 12% from last month</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>Present Today</h3>
+                                <span class="metric-icon">✓</span>
+                            </div>
+                            <div class="metric-value">1,156</div>
+                            <div class="metric-change">90% attendance rate</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>Active Projects</h3>
+                                <span class="metric-icon">📁</span>
+                            </div>
+                            <div class="metric-value">48</div>
+                            <div class="metric-change positive">↑ 8 new projects</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>On Leave</h3>
+                                <span class="metric-icon">🏖️</span>
+                            </div>
+                            <div class="metric-value">128</div>
+                            <div class="metric-change">10% of workforce</div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="charts-row">
+                        <!-- Department Distribution -->
+                        <div class="chart-card">
+                            <h3>Employee Distribution by Department</h3>
+                            <div class="chart-container">
+                                <canvas id="departmentChart"></canvas>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #3498db;"></span>
+                                    <span>Engineering (320)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #e74c3c;"></span>
+                                    <span>Sales (280)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #2ecc71;"></span>
+                                    <span>HR (85)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #f39c12;"></span>
+                                    <span>Operations (210)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #9b59b6;"></span>
+                                    <span>Finance (140)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Attendance -->
+                        <div class="chart-card">
+                            <h3>Monthly Attendance Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="attendanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="activity-section">
+                        <h3>Recent Activities</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: #e74c3c;">📋</div>
+                                <div class="activity-content">
+                                    <p class="activity-title">New Employee Onboarded</p>
+                                    <p class="activity-desc">Sarah Johnson joined the Engineering team</p>
+                                    <p class="activity-time">2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: #f39c12;">🎯</div>
+                                <div class="activity-content">
+                                    <p class="activity-title">Project Milestone Achieved</p>
+                                    <p class="activity-desc">Q2 deliverables completed ahead of schedule</p>
+                                    <p class="activity-time">5 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: #2ecc71;">🏆</div>
+                                <div class="activity-content">
+                                    <p class="activity-title">Employee Recognition</p>
+                                    <p class="activity-desc">Michael Chen awarded Employee of the Month</p>
+                                    <p class="activity-time">1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Employees Section -->
+                <section id="employees-content" class="section-content">
+                    <div class="employees-toolbar">
+                        <input type="text" id="employee-search" placeholder="Search by name or ID..." class="employee-search">
+                        <button class="btn btn-primary">+ Add Employee</button>
+                    </div>
+                    <div class="employees-table-wrapper">
+                        <table class="employees-table">
+                            <thead>
+                                <tr>
+                                    <th>Employee ID</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Position</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employees-tbody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Performance Section -->
+                <section id="performance-content" class="section-content">
+                    <div class="performance-container">
+                        <div class="performance-filter">
+                            <select id="department-filter">
+                                <option value="">All Departments</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Sales">Sales</option>
+                                <option value="HR">HR</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                        </div>
+                        <div class="performance-grid" id="performance-grid">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Attendance Section -->
+                <section id="attendance-content" class="section-content">
+                    <div class="attendance-container">
+                        <div class="attendance-summary">
+                            <div class="attendance-stat">
+                                <h4>Present</h4>
+                                <p class="stat-value">1,156</p>
+                                <p class="stat-percent">90%</p>
+                            </div>
+                            <div class="attendance-stat">
+                                <h4>Absent</h4>
+                                <p class="stat-value">64</p>
+                                <p class="stat-percent">5%</p>
+                            </div>
+                            <div class="attendance-stat">
+                                <h4>On Leave</h4>
+                                <p class="stat-value">64</p>
+                                <p class="stat-percent">5%</p>
+                            </div>
+                        </div>
+                        <div class="attendance-chart-wrapper">
+                            <h3>Attendance Rate by Department</h3>
+                            <canvas id="attendanceByDeptChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leaves Section -->
+                <section id="leaves-content" class="section-content">
+                    <div class="leaves-container">
+                        <div class="leave-stats">
+                            <div class="leave-card">
+                                <h4>Casual Leaves</h4>
+                                <div class="leave-bar">
+                                    <div class="leave-used" style="width: 60%"></div>
+                                </div>
+                                <p><strong>24</strong> / 30 days used</p>
+                            </div>
+                            <div class="leave-card">
+                                <h4>Sick Leaves</h4>
+                                <div class="leave-bar">
+                                    <div class="leave-used" style="width: 40%; background-color: #e74c3c;"></div>
+                                </div>
+                                <p><strong>4</strong> / 10 days used</p>
+                            </div>
+                            <div class="leave-card">
+                                <h4>Earned Leaves</h4>
+                                <div class="leave-bar">
+                                    <div class="leave-used" style="width: 85%; background-color: #f39c12;"></div>
+                                </div>
+                                <p><strong>17</strong> / 20 days used</p>
+                            </div>
+                        </div>
+                        <div class="leave-requests">
+                            <h3>Pending Leave Requests</h3>
+                            <div class="request-list" id="leave-requests-list">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="reports-content" class="section-content">
+                    <div class="reports-container">
+                        <div class="report-card">
+                            <h3>Monthly Report</h3>
+                            <p>Employee performance and attendance metrics for the current month</p>
+                            <button class="btn btn-secondary">📥 Download</button>
+                        </div>
+                        <div class="report-card">
+                            <h3>Quarterly Review</h3>
+                            <p>Comprehensive analysis of departmental productivity and KPIs</p>
+                            <button class="btn btn-secondary">📥 Download</button>
+                        </div>
+                        <div class="report-card">
+                            <h3>Annual Summary</h3>
+                            <p>Year-to-date performance, hiring, and employee satisfaction reports</p>
+                            <button class="btn btn-secondary">📥 Download</button>
+                        </div>
+                        <div class="report-card">
+                            <h3>Turnover Analysis</h3>
+                            <p>Employee retention metrics and turnover trends by department</p>
+                            <button class="btn btn-secondary">📥 Download</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
