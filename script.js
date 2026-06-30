@@ -1,4 +1,6 @@
-// ==================== MOCK DATA ==================== 
+// ================
+// 
+// nhdjshg==== MOCK DATA ==================== 
 const employeesData = [
     { id: 'EMP001', name: 'John Doe', department: 'Engineering', position: 'Senior Developer', email: 'john.doe@corp.com', status: 'present' },
     { id: 'EMP002', name: 'Sarah Johnson', department: 'Engineering', position: 'Full Stack Developer', email: 'sarah.j@corp.com', status: 'present' },
